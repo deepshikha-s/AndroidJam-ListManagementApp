@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTasks">
+
+    <TextView
+        android:id="@+id/addnewtask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Task"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <EditText
+        android:id="@+id/tasktext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter task"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.206" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/exittask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="215dp"
+        android:layout_marginBottom="72dp"
+        android:clickable="true"
+        android:src="@drawable/exitnotes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasktext"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/createtask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="215dp"
+        android:layout_marginBottom="72dp"
+        android:clickable="true"
+        android:src="@drawable/itemadd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.715"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasktext"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/duedate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="73dp"
+        android:layout_marginBottom="444dp"
+        android:ems="10"
+        android:hint="Enter due date"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasktext"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/duetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="67dp"
+        android:layout_marginBottom="356dp"
+        android:ems="10"
+        android:hint="Enter due date and time"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/duedate"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <RadioButton
+        android:id="@+id/optionwork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Work"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/duetime"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RadioButton
+        android:id="@+id/optionpersonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="4dp"
+        android:text="Personal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toEndOf="@+id/optionwork"
+        app:layout_constraintTop_toBottomOf="@+id/duetime"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RadioButton
+        android:id="@+id/optionurgent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="156dp"
+        android:text="Urgent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toEndOf="@+id/optionothers"
+        app:layout_constraintTop_toBottomOf="@+id/optionpersonal" />
+
+    <RadioButton
+        android:id="@+id/optionothers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Others"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionwork"
+        app:layout_constraintVertical_bias="0.145" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
