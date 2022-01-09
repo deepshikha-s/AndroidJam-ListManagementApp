@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/Home">
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.gdsciitbhu.android.mymanager.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home3_to_tasks2"
+            app:destination="@id/Tasks" />
+        <action
+            android:id="@+id/action_home3_to_lists22"
+            app:destination="@id/Lists" />
+        <action
+            android:id="@+id/action_home3_to_notes"
+            app:destination="@id/notes" />
+    </fragment>
+    <fragment
+        android:id="@+id/notes"
+        android:name="com.gdsciitbhu.android.mymanager.Notes"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notes_to_addNotes2"
+            app:destination="@id/addnotes" />
+    </fragment>
+    <fragment
+        android:id="@+id/Tasks"
+        android:name="com.gdsciitbhu.android.mymanager.Tasks"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_tasks" >
+        <action
+            android:id="@+id/action_tasks2_to_addTasks2"
+            app:destination="@id/addtasks" />
+    </fragment>
+    <fragment
+        android:id="@+id/Lists"
+        android:name="com.gdsciitbhu.android.mymanager.Lists"
+        android:label="fragment_lists"
+        tools:layout="@layout/fragment_lists" />
+    <fragment
+        android:id="@+id/addnotes"
+        android:name="com.gdsciitbhu.android.mymanager.AddNotes"
+        android:label="fragment_add_notes"
+        tools:layout="@layout/fragment_add_notes" />
+    <fragment
+        android:id="@+id/addtasks"
+        android:name="com.gdsciitbhu.android.mymanager.AddTasks"
+        android:label="fragment_add_tasks"
+        tools:layout="@layout/fragment_add_tasks" />
+</navigation>
