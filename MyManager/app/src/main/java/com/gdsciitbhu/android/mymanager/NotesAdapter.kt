@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gdsciitbhu.android.mymanager.databinding.NotesItemBinding
 
 class NotesAdapter: RecyclerView.Adapter<NotesViewholder>() {
-    val notesList = mutableListOf<String>()
-    fun addnote(todo:String){
-        notesList.add(todo)
-        notifyItemInserted(notesList.size)
+    var notesList = emptyList<NotesData>()
+    fun addnote(note:List<NotesData>){
+        notesList = note
+        notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewholder {
         val inflater = LayoutInflater.from(parent.context)
@@ -18,7 +18,7 @@ class NotesAdapter: RecyclerView.Adapter<NotesViewholder>() {
         }
 
         override fun onBindViewHolder(holder: NotesViewholder, position: Int) {
-            holder.binding.todo.text = notesList[position]
+            holder.binding.notetext.text = notesList[position].notes
         }
 
         override fun getItemCount(): Int {

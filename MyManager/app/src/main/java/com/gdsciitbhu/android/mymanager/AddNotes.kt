@@ -18,15 +18,8 @@ class AddNotes : Fragment(R.layout.fragment_add_notes) {
         }
         binding.createnote.setOnClickListener {
             val note = binding.notetext.text.toString()
-            val adapter = NotesAdapter()
-            viewModel.add
+            viewModel.addNote(NotesData(note))
             findNavController().navigate(R.id.notes)
         }
     }
 }
-/*
-override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
- */
