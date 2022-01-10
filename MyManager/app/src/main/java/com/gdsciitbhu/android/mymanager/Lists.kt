@@ -19,6 +19,8 @@ class Lists : Fragment(R.layout.fragment_lists) {
         val adapter = ListAdapter()
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
         binding.newlist.setOnClickListener {
+            var ld  = ListsData(binding.listitem.text.toString(), true)
+            viewModel.addList(ld)
             // pass it to rvLists layoutManager
             binding.listview.setLayoutManager(layoutManager)
             binding.listview.adapter = adapter
@@ -27,5 +29,18 @@ class Lists : Fragment(R.layout.fragment_lists) {
                 adapter.notifyDataSetChanged()
             }
         }
+        /*binding.newlist.setOnClickListener {
+            // pass it to rvLists layoutManager
+            binding.listview.setLayoutManager(layoutManager)
+            binding.listview.adapter = adapter
+            viewModel.getList().observe(viewLifecycleOwner){
+                adapter.addlist(it)
+                adapter.notifyDataSetChanged()
+            }
+
+
+        }
+
+         */
     }
 }
