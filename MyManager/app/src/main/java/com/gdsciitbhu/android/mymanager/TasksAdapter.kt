@@ -19,6 +19,7 @@ class TasksAdapter: RecyclerView.Adapter<TasksViewholder>() {
         val binding = TasksItemBinding.inflate(inflater, parent, false)
         return TasksViewholder(binding)
     }
+    /*
     fun strikeThrough(tasktext: TextView, taskdate: TextView, taskcategory: TextView, isChecked: Boolean){
         if(isChecked){
             tasktext.paintFlags = tasktext.paintFlags or STRIKE_THRU_TEXT_FLAG
@@ -31,20 +32,23 @@ class TasksAdapter: RecyclerView.Adapter<TasksViewholder>() {
             taskcategory.paintFlags = taskcategory.paintFlags and STRIKE_THRU_TEXT_FLAG.inv()
         }
     }
+     */
     override fun onBindViewHolder(holder: TasksViewholder, position: Int) {
         var text = holder.binding.tasktext
         var date = holder.binding.taskdate
         var category = holder.binding.taskcategory
-        var box = holder.binding.checkBox
+        //var box = holder.binding.checkBox
         text.text = tasksList[position].task
         date.text = tasksList[position].date
         category.text = tasksList[position].cat
+        /*
         box.isChecked = tasksList[position].isChecked
         strikeThrough(text, date, category, box.isChecked)
         box.setOnCheckedChangeListener { _, isChecked ->
             strikeThrough(text, date, category, box.isChecked)
             box.isChecked = !box.isChecked
         }
+         */
     }
 
     override fun getItemCount(): Int {

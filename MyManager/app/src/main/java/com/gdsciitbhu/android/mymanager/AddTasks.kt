@@ -14,32 +14,6 @@ import com.gdsciitbhu.android.mymanager.databinding.FragmentAddTasksBinding
 class AddTasks : Fragment(R.layout.fragment_add_tasks) {
     val viewModel by activityViewModels<TasksViewModel>()
     var category= ""
-    fun onRadioButtonClicked(view: View) {
-        if (view is RadioButton) {
-            // Is the button now checked?
-            val checked = view.isChecked
-            // Check which radio button was clicked
-            when (view.getId()) {
-                R.id.optionothers ->
-                    if (checked) {
-                        category = "Others"
-                    }
-                R.id.optionpersonal ->
-                    if (checked) {
-                        category = "Personal"
-                    }
-                R.id.optionurgent ->
-                    if (checked){
-                        category = "Urgent"
-                    }
-                R.id.optionwork ->
-                    if (checked){
-                        category = "Work"
-                    }
-            }
-            return category
-        }
-    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val binding = FragmentAddTasksBinding.bind(view)
         binding.exittask.setOnClickListener {
@@ -48,8 +22,8 @@ class AddTasks : Fragment(R.layout.fragment_add_tasks) {
         binding.createtask.setOnClickListener {
             val task = binding.tasktext.text.toString()
             val date = binding.duetime.text.toString()
-            val cat = onRadioButtonClicked(RadioButton)
-            viewModel.addTask(TasksData(task, date, cat))
+            val category = binding.category.text.toString()
+            viewModel.addTask(TasksData(task, date, category))
             findNavController().navigate(R.id.Tasks)
         }
     }
