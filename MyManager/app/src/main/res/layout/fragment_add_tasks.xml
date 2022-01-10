@@ -65,27 +65,9 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/duedate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="73dp"
-        android:layout_marginBottom="444dp"
-        android:ems="10"
-        android:hint="Enter due date"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tasktext"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
         android:id="@+id/duetime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
-        android:layout_marginBottom="356dp"
         android:ems="10"
         android:hint="Enter due date and time"
         android:inputType="text"
@@ -93,58 +75,51 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/duedate"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326" />
 
-    <RadioButton
-        android:id="@+id/optionwork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Work"
+    <RadioGroup
+        android:layout_width="232dp"
+        android:layout_height="292dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintHorizontal_bias="0.435"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/duetime"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653">
 
-    <RadioButton
-        android:id="@+id/optionpersonal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="4dp"
-        android:text="Personal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toEndOf="@+id/optionwork"
-        app:layout_constraintTop_toBottomOf="@+id/duetime"
-        app:layout_constraintVertical_bias="0.0" />
+        <RadioButton
+            android:id="@+id/optionwork"
+            android:layout_width="155dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:text="Work"
+            android:onClick="onRadioButtonClicked"/>
 
-    <RadioButton
-        android:id="@+id/optionurgent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="156dp"
-        android:text="Urgent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.412"
-        app:layout_constraintStart_toEndOf="@+id/optionothers"
-        app:layout_constraintTop_toBottomOf="@+id/optionpersonal" />
+        <RadioButton
+            android:id="@+id/optionpersonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:text="Personal"
+            android:onClick="onRadioButtonClicked"/>
 
-    <RadioButton
-        android:id="@+id/optionothers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Others"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.204"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/optionwork"
-        app:layout_constraintVertical_bias="0.145" />
+        <RadioButton
+            android:id="@+id/optionothers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Others"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:id="@+id/optionurgent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Urgent"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
